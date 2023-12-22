@@ -2,7 +2,7 @@ const fs = require('fs');
 const readline = require('readline');
 
 const readInterface = readline.createInterface({
-    input: fs.createReadStream('././catmid/respuestas/nuevo/traslaciones_31032023.json')
+    input: fs.createReadStream('././catmid/respuestas/nuevo/NOTIFICACIONES_2023_18_20_DICIEMBRE_RESPUESTA.json')
 });
 
 const jsonData = [];
@@ -14,15 +14,18 @@ readInterface.on('line', (line) => {
 
 readInterface.on('close', () => {
     const infoData = jsonData.reduce((result, data) => {
+        
         if (!data.lError) {
+            
             let servicios = data.ttServicios;
             let infoData = servicios.map(info => JSON.stringify(info)).join('\n');
             result.push(infoData);            
         }
         return result;
-    }, []).join('\n');
+    }, []).join(',');
+    
 
-    fs.writeFile('././catmid/respuestas/nuevo/archivoCompleto/noti31032023.json', infoData, 'utf-8', error => {
+    fs.writeFile('././catmid/respuestas/nuevo/archivoCompleto/NOTIFICACIONES_2023_18_20_DICIEMBRE_RESPUESTA.json', infoData, 'utf-8', error => {
         if(error){
             console.error(`Error ${error}`);
             return
