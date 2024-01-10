@@ -2,7 +2,7 @@
 const fs = require('fs');
 let modifiedData = "";
 
-fs.readFile('./././catmid/antiguo/NOTIFICACIONES_2023_18_20_DICIEMBRE.txt', 'utf8', (error, data) => {
+fs.readFile('./././catmid/antiguo/Solicitudes no notificadas correo Primera semana de Enero.txt', 'utf8', (error, data) => {
   if (error) {
     console.error('Failed to read file: ' + error);
     return;
@@ -19,7 +19,7 @@ fs.readFile('./././catmid/antiguo/NOTIFICACIONES_2023_18_20_DICIEMBRE.txt', 'utf
   }
 
   // Write the output data to the output file
-  fs.writeFile('./././catmid/nuevo/NOTIFICACIONES_2023_18_20_DICIEMBRE.txt', (outputData.includes("delete")) ? modifiedData : outputData, 'utf8', error => {
+  fs.writeFile('./././catmid/nuevo/Solicitudes no notificadas correo Primera semana de Enero.txt', (outputData.includes("delete")) ? modifiedData : outputData, 'utf8', error => {
     if (error) {
       console.error('Failed to write file: ' + error);
       return;

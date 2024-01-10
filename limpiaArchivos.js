@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-fs.readFile('././catmid/respuestas/antiguo/NOTIFICACIONES_2023_18_20_DICIEMBRE_RESPUESTA.txt', 'utf8', (error, data) => {
+fs.readFile('././catmid/respuestas/antiguo/NOTIFICACION_11_NOV_AL_31_DIC_2023_RESPUESTA.txt', 'utf8', (error, data) => {
     if (error) {
       console.error('Failed to read file: ' + error);
       return;
@@ -15,7 +15,7 @@ fs.readFile('././catmid/respuestas/antiguo/NOTIFICACIONES_2023_18_20_DICIEMBRE_R
     //const outputData = infoTxt.map(obj => JSON.stringify(obj)).join('\n');
    
     // Write the output data to the output file
-    fs.writeFile('././catmid/respuestas/nuevo/NOTIFICACIONES_2023_18_20_DICIEMBRE_RESPUESTA.json', infoTxt, 'utf8', error => {
+    fs.writeFile('././catmid/respuestas/nuevo/NOTIFICACION_11_NOV_AL_31_DIC_2023_RESPUESTA.json', infoTxt, 'utf8', error => {
       if (error) {
         console.error('Failed to write file: ' + error);
         return;
